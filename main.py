@@ -66,7 +66,9 @@ class App:
             return
 
         if self.filename != "":
-            os.system(f"manim { '-p' if self.isPreview.get() else ''} -q{q} {self.filename}")
+            str_ = f"python -m manim { '-p' if self.isPreview.get() else ''} -q{q} {self.filename} Animation"
+            print(str_)
+            os.system(str_)
 
     def create_class_manim(self):
         self.set_templates_form = Toplevel(self.root)
@@ -90,3 +92,4 @@ class App:
 
 
 App()
+ 
